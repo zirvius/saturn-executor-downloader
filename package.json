@@ -1,0 +1,11 @@
+{
+  "name": "saturn-executor-downloader",
+  "version": "1.0.0",
+  "description": "testing",
+  "main": "index.js",
+  "bin": {
+    "saturn-executor": "./index.js"
+  },
+  "author": "rawr",
+  "license": "MIT"
+}
