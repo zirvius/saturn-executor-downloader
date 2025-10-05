@@ -59,6 +59,7 @@ async function main() {
   });
 
   console.log(`\n${color.cyan}💡 How to choose:${color.white} Type the number of the executor you want.`);
+  console.log(`\n${color.cyan}📄 Note:${color.white} Updated every one hour`);
   const teks = await input(`${color.green}👉 Choose a number: ${color.reset}`);
 
   exec(teks.trim());
