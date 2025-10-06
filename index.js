@@ -60,9 +60,14 @@ async function main() {
 
   console.log(`\n${color.cyan}💡 How to choose:${color.white} Type the number of the executor you want.`);
   console.log(`${color.cyan}📄 Note:${color.white} Updated every one hour`);
-  const teks = await input(`${color.green}👉 Choose a number: ${color.reset}`);
 
-  exec(teks.trim());
+  while (true) {
+    const teks = await input(`${color.green}👉 Choose a number: ${color.reset}`);
+    const number = teks.trim();
+
+    const valid = exec(number);
+    if (valid) break; // keluar dari loop kalau input valid
+  }
 
   function exec(number) {
     const map = {
@@ -79,13 +84,13 @@ async function main() {
       11: "cubix",
       12: "cryptic",
       13: "krnl",
-      14: "Ronix"
+      14: "ronix"
     };
 
     const key = map[number];
     if (!key) {
-      console.log(`${color.red}❌ Invalid selection!${color.reset}`);
-      return;
+      console.log(`${color.red}❌ Invalid selection! Please try again.${color.reset}\n`);
+      return false; // tandain invalid
     }
 
     const android = json[key]?.[0]?.android || "Not Found";
@@ -97,6 +102,7 @@ async function main() {
     console.log(`${color.cyan}║ ${color.yellow}Android:${color.white} ${android}`);
     console.log(`${color.cyan}║ ${color.yellow}iOS:${color.white} ${ios}`);
     console.log(`${color.cyan}╚══════════════════════════════════════╝${color.reset}`);
+    return true; // input valid
   }
 }
 
