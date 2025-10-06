@@ -51,7 +51,7 @@ async function main() {
   const executors = [
     "Arceus X", "Codex", "Fluxus", "Hydrogen", "Delta",
     "Trigon", "Vegax", "Evon", "Alysee", "Valyse",
-    "Cubix", "Cryptic", "Krnl"
+    "Cubix", "Cryptic", "Krnl", "Ronix"
   ];
 
   executors.forEach((name, i) => {
@@ -78,7 +78,8 @@ async function main() {
       10: "valyse",
       11: "cubix",
       12: "cryptic",
-      13: "krnl"
+      13: "krnl",
+      14: "Ronix"
     };
 
     const key = map[number];
